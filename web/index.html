@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DynamicCharging | Wireless EV Infrastructure</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="glow-mesh"></div>
+
+    <nav>
+        <div class="logo">DYNAMO.EV</div>
+        <ul class="nav-links">
+            <li><a href="#overview">Overview</a></li>
+            <li><a href="#components">System</a></li>
+            <li><a href="#logic">Software</a></li>
+            <li><a href="#simulation">Live Lab</a></li>
+        </ul>
+        <a href="#simulation" class="btn-primary" style="padding: 0.8rem 2rem; font-size: 0.9rem;">Run Simulator</a>
+    </nav>
+
+    <!-- 1. Project Overview -->
+    <section class="hero">
+        <span class="section-tag animate-on-scroll">Engineering Project 2026</span>
+        <h1 class="animate-on-scroll">The End of the <span>Charging Cable.</span></h1>
+        <p class="animate-on-scroll">Wireless Dynamic Charging for EVs: Powering mobility through electromagnetic
+            induction, eliminating stationary stops, and revolutionizing transportation infrastructure.</p>
+        <div class="animate-on-scroll">
+            <a href="#overview" class="btn-primary">Explore Technology</a>
+        </div>
+    </section>
+
+    <!-- 2. System Architecture -->
+    <section id="overview">
+        <span class="section-tag">Concept & Evolution</span>
+        <h2 class="animate-on-scroll">Bridging the Air Gap: <br>Inductive Power Transfer</h2>
+
+        <div class="feature-grid">
+            <div class="glass-card animate-on-scroll">
+                <h3>Resonant Coupling</h3>
+                <p>Transferring power over air gaps via magnetic field resonance between primary (road) and secondary
+                    (vehicle) coils.</p>
+                <ul>
+                    <li>Dynamic energy flow</li>
+                    <li>Zero physical contact</li>
+                    <li>90%+ peak efficiency</li>
+                </ul>
+            </div>
+            <div class="glass-card animate-on-scroll">
+                <h3>Infrastructure Side</h3>
+                <p>High-frequency AC current flows through copper coils embedded beneath the road surface at 20cm
+                    intervals.</p>
+                <ul>
+                    <li>Litz wire spiral coils</li>
+                    <li>MOSFET Inverter banks</li>
+                    <li>Smart Road sensing</li>
+                </ul>
+            </div>
+            <div class="glass-card animate-on-scroll">
+                <h3>On-Board Harvester</h3>
+                <p>A specialized energy harvesting module installed under the EV chassis, consisting of a multi-turn
+                    induction coil and magnetic shielding.</p>
+                <ul>
+                    <li>Ferrite core for flux focus</li>
+                    <li>Synchronous Rectification</li>
+                    <li>Resonant tuning to 85kHz</li>
+                    <li>Smart misalignment cleanup</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Visual Aid from Generated Artifact -->
+    <section style="background: rgba(255,255,255,0.02);">
+        <h2 class="animate-on-scroll" style="text-align: center;">Technical Diagram</h2>
+        <img src="assets/ev_wireless_charging_diagram.png" alt="Engineering Schema"
+            style="width: 100%; border-radius: 40px; border: 1px solid var(--border-glass);" class="animate-on-scroll">
+    </section>
+
+    <!-- 3. Hardware Components -->
+    <section id="components">
+        <span class="section-tag">The Bill of Materials</span>
+        <h2 class="animate-on-scroll">Industrial Hardware Stack</h2>
+        <div class="feature-grid">
+            <div class="glass-card animate-on-scroll">
+                <h3>Power Transmission</h3>
+                <p>Copper Transmitter Coils, ZVS Driver Module, High-Frequency Capacitor Bank, and 24V-48V DC Power
+                    Supply.</p>
+            </div>
+            <div class="glass-card animate-on-scroll">
+                <h3>Reception & UI</h3>
+                <p>Receiver Coil (Spiral), Ferrite Sheets for Shielding, Bridge Rectifier, Voltage Regulator
+                    (Buck-Boost), and OLED
+                    Battery Monitoring Display.</p>
+            </div>
+            <div class="glass-card animate-on-scroll">
+                <h3>Control Hub</h3>
+                <p>Java-based Orchestration on Embedded CPU/Arduino, Current/Voltage Sensors, and Overheat Protection
+                    Thermistors.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Interactive Simulation (User requested better car/internal components) -->
+    <section id="simulation">
+        <span class="section-tag">Interactive Environment</span>
+        <h2 class="animate-on-scroll">Wireless Energy Simulation</h2>
+        <p class="animate-on-scroll" style="margin-bottom: 2rem;">Observe how the <strong>Receiver Coil</strong> under
+            the car captures energy from the **Road Coils** as it moves.</p>
+
+        <div class="sim-viewport">
+            <div class="car-container" id="evCar">
+                <div class="car-body">
+                    <div class="window"></div>
+                    <div class="receiver-coil" id="rxCoil"></div>
+                </div>
+            </div>
+
+            <div class="road-surface" id="roadWays">
+                <div class="coil-tx" style="left: 10%;">
+                    <div class="power-arc"></div>
+                </div>
+                <div class="coil-tx" style="left: 30%;">
+                    <div class="power-arc"></div>
+                </div>
+                <div class="coil-tx" style="left: 50%;">
+                    <div class="power-arc"></div>
+                </div>
+                <div class="coil-tx" style="left: 70%;">
+                    <div class="power-arc"></div>
+                </div>
+                <div class="coil-tx" style="left: 90%;">
+                    <div class="power-arc"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="stat-panel animate-on-scroll">
+            <div class="stat-card">
+                <h4>Grid Connectivity</h4>
+                <div class="value" id="gridStatus" style="color: var(--primary);">ACTIVE</div>
+            </div>
+            <div class="stat-card">
+                <h4>Battery Buffer</h4>
+                <div class="value" id="voltageVal">12.0V</div>
+            </div>
+            <div class="stat-card">
+                <h4>Charge State</h4>
+                <div class="value" id="batteryStatus" style="color: var(--text-dim);">IDLE</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Software Logic -->
+    <section id="logic">
+        <span class="section-tag">Algorithmic Base</span>
+        <h2 class="animate-on-scroll">Intelligent Charging Logic</h2>
+        <p class="animate-on-scroll" style="margin-bottom: 2rem;">Our Java-based simulation engine manages battery
+            cycles, safety cutoffs, and resonant tuning efficiency.</p>
+        <div class="java-code animate-on-scroll">
+            <pre><code><span class="comment">// Auto-Management Loop</span>
+<span class="keyword">while</span> (vehicle_is_active) {
+    <span class="class">float</span> currentV = sensors.<span class="method">readBatteryVoltage</span>();
+    
+    <span class="keyword">if</span> (currentV < LOW_THRESHOLD && vehicle.<span class="method">isOverCoil</span>()) {
+        inverter.<span class="method">activate</span>(<span class="string">"RESONANT_MODE"</span>);
+        ui.<span class="method">setStatus</span>(<span class="string">"DYNAMIC_CHARGING"</span>);
+    } 
+    
+    <span class="keyword">if</span> (currentV > SAFETY_LIMIT) {
+        circuit.<span class="method">cutoff</span>(); <span class="comment">// Prevents Overcharging</span>
+    }
+}</code></pre>
+        </div>
+    </section>
+
+    <!-- 7 & 8. Advantages & Challenges -->
+    <section>
+        <div class="feature-grid">
+            <div class="glass-card animate-on-scroll">
+                <h3>Global Benefits</h3>
+                <ul>
+                    <li>Infinity vehicle range</li>
+                    <li>60% reduction in battery weight</li>
+                    <li>Zero manual intervention</li>
+                </ul>
+            </div>
+            <div class="glass-card animate-on-scroll" style="border-color: var(--accent);">
+                <h3>Implementation Challenges</h3>
+                <ul>
+                    <li>Road excavation costs</li>
+                    <li>High-frequency magnetic losses</li>
+                    <li>Coil alignment precision</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- 9. Future Improvements -->
+    <section id="future">
+        <span class="section-tag">2030 Roadmap</span>
+        <h2 class="animate-on-scroll">The Next Frontier</h2>
+        <div class="timeline">
+            <div class="timeline-item animate-on-scroll">
+                <h3>Smart Highways</h3>
+                <p>AI-driven power optimization where the road only activates coils milliseconds before a vehicle
+                    arrives, maximizing grid efficiency.</p>
+            </div>
+            <div class="timeline-item animate-on-scroll">
+                <h3>Solar Integrated Roads</h3>
+                <p>Photovoltaic road surfaces that power the induction coils directly, creating a truly zero-emission
+                    energy loop.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <span class="footer-logo logo">DYNAMO.EV</span>
+        <p>Complete Wireless Dynamic Charging Project Portfolio</p>
+        <p style="color: var(--text-dim); font-size: 0.9rem; margin-top: 2rem;">Designed for Future Mobility |
+            Engineering 2026</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
